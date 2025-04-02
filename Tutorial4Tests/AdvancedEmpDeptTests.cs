@@ -85,7 +85,7 @@ public class AdvancedEmpDeptTests
     {
         var emps = Database.GetEmps();
 
-        var result = emps.Any(emp => emp.Comm > 400);
+        var result = emps.Any(emp => emp.Comm.HasValue && emp.Comm > 400);
         
         Assert.True(result);
     }
